@@ -25,7 +25,7 @@
  */
 package skyhussars.engine.mission;
 
-import skyhussars.engine.Sky;
+import skyhussars.engine.SkyComponent;
 import skyhussars.engine.DayLightWeatherManager;
 import skyhussars.engine.DataModel;
 import skyhussars.engine.terrain.TerrainManager;
@@ -66,7 +66,7 @@ public class MissionFactory {
     @Autowired
     private ControlsManager controlsManager;
     @Autowired
-    private Sky sky;
+    private SkyComponent sky;
 
     public MissionState mission(String missionName) {
         MissionDescriptor missionDescriptor = dataModel.getMissionDescriptor(missionName);

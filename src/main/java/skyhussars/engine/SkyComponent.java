@@ -38,7 +38,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Sky {
+public class SkyComponent {
 
     @Autowired
     private Node rootNode;

@@ -37,7 +37,7 @@ public class DayLightWeatherManager {
     private Node rootNode;
 
     @Autowired
-    private Sky sky;
+    private SkyComponent sky;
 
     @Autowired
     private Lighting lighting;

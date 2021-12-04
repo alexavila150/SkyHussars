@@ -96,10 +96,8 @@ public class TerrainProperties {
         if (!Objects.equals(this.size.getValue(), other.size.getValue())) {
             return false;
         }
-        if (!Objects.equals(this.location.getValue(), other.location.getValue())) {
-            return false;
-        }
-        return true;
+
+        return Objects.equals(this.location.getValue(), other.location.getValue());
     }
     
     

@@ -47,6 +47,10 @@ import skyhussars.persistence.terrain.TerrainDescriptor;
 
 public class SkyHussars extends SimpleApplication {
 
+    public SkyHussars(){
+
+    }
+
     public static final String APP_ROOT = "./";
     private final SettingsManager settingsManager = new SettingsManager(System.getProperty("user.dir"));
     private GameState gameState; 

@@ -17,10 +17,10 @@ public class Marshal {
         catch (IOException ex) { throw new RuntimeException(ex); }
     }
 
-    public static <T> T unmarshal(File descriptorFile,Class<T> targetClass) {
+    public static <T> T unmarshal(File descriptorFile,Class<T> targetClass) throws IOException {
         T descriptor = null;
         try { descriptor = mapper.readValue(descriptorFile,targetClass); } 
-        catch (IOException ex) {throw new RuntimeException(ex);}
+        catch (IOException ex) {throw new IOException(ex);}
         return descriptor;
     }
 }

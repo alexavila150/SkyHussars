@@ -25,6 +25,7 @@
  */
 package skyhussars;
 
+import com.jme3.app.Application;
 import skyhussars.persistence.plane.PlaneDescriptorMarshal;
 import skyhussars.planeed.EditorView;
 import skyhussars.planeed.PlaneEdState;
@@ -43,7 +44,12 @@ import skyhussars.planeed.LevelFlightSimulation;
 import static skyhussars.planeed.UiHelpers.kmhToMs;
 import static skyhussars.utility.Streams.list;
 import static skyhussars.utility.Streams.pm;
+
 public class PlaneEd extends Application {
+
+    public PlaneEd(){
+        super();
+    }
 
     private final PlaneProperties planeProperties = new PlaneProperties();
 

@@ -65,7 +65,7 @@ public class TheatreLoader {
         return terrainDescriptors;
     }
     
-    private TerrainDescriptor loadTheatre(File folder){
+    private TerrainDescriptor loadTheatre(File folder) throws IOException {
         LOGGER.info("Loading theatre " + folder.getPath());
         File theatre = new File(folder,jsonDescriptorname);
         if(!theatre.exists()) throw new IllegalStateException("TheatreLoader did not found theatre.json in " + folder.getPath());

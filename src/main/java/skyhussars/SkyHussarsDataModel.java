@@ -42,13 +42,13 @@ public class SkyHussarsDataModel implements DataModel, InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
 
-        PlaneMissionDescriptor planeMissionDescriptor = new PlaneMissionDescriptor();
-        planeMissionDescriptor.player(true);
-        planeMissionDescriptor.planeType("Lockheed P-80A-1-LO Shooting Star");
-        planeMissionDescriptor.startLocation(new Vector3f(0, 3000, 0));
+        PlaneMissionDescriptor planeDescriptor = new PlaneMissionDescriptor();
+        planeDescriptor.player(true);
+        planeDescriptor.planeType("Lockheed P-80A-1-LO Shooting Star");
+        planeDescriptor.startLocation(new Vector3f(0, 3000, 0));
 
         List<PlaneMissionDescriptor> planes = generatePlanes(0);
-        planes.add(planeMissionDescriptor);
+        planes.add(planeDescriptor);
         MissionDescriptor missionDescriptor = new MissionDescriptor();
         missionDescriptor.name("Test mission");
         missionDescriptor.planeMissionDescriptors(planes);

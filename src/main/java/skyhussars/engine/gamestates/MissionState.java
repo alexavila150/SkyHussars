@@ -26,7 +26,7 @@
 package skyhussars.engine.gamestates;
 
 import com.jme3.math.Vector3f;
-import skyhussars.engine.Sky;
+import skyhussars.engine.SkyComponent;
 import skyhussars.engine.DayLightWeatherManager;
 import skyhussars.engine.Pilot;
 import skyhussars.engine.terrain.TerrainManager;
@@ -60,12 +60,12 @@ public class MissionState implements GameState {
     private Timer timer;
     private GameState nextState = this;
     private final Node rootNode;
-    private final Sky sky;
+    private final SkyComponent sky;
     public JoyStatus joyStatus = new JoyStatus();
 
     public MissionState(List<Plane> planes, ProjectileManager projectileManager, SoundManager soundManager,
             CameraManager cameraManager, TerrainManager terrainManager,
-            DayLightWeatherManager dayLightWeatherManager, Node rootNode, Sky sky) {
+            DayLightWeatherManager dayLightWeatherManager, Node rootNode, SkyComponent sky) {
         this.rootNode = rootNode;
         this.sky = sky;
         this.planes = planes;
@@ -116,7 +116,11 @@ public class MissionState implements GameState {
     @Override
     public synchronized GameState update(float tpf) {
         if(nextState == null) initialize();
-        if (!paused && !ended) run(); else stop();
+        if (!paused && !ended) {
+            run();
+        } else {
+            stop();
+        }
         auxiliaryUpdates(tpf);
         if(nextState != this) close();
         return nextState;

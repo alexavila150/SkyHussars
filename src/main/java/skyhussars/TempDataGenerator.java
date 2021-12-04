@@ -62,7 +62,7 @@ public class TempDataGenerator {
         return Optional.ofNullable(ioex);
     }
     
-    private Map<String, PlaneDescriptor> planes = new HashMap<>();
+    private final Map<String, PlaneDescriptor> planes = new HashMap<>();
     private Map<String, EngineDescriptor> engines = new HashMap<>();
 
     public void createPlaneAt(String folder) throws IOException {

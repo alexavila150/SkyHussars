@@ -27,6 +27,7 @@ package skyhussars.persistence.base;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
@@ -89,7 +90,7 @@ public class RegistryLoader<T> {
         return directories;
     }
     
-    private List<T> populateRegistry(Registry<T> registry,BiFunction<T,File,String> nameOf) {
+    private List<T> populateRegistry(Registry<T> registry,BiFunction<T,File,String> nameOf) throws IOException {
         List<T> descriptors = new ArrayList<>();
         for (File dir : collectDirectories()) {
             T descriptor = Marshal.unmarshal(openDescriptorFile(dir),targetClass);
